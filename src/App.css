@@ -1,0 +1,15 @@
+.app {
+  padding: 0em 2em;
+}
+
+.app img {
+  width: 10em;
+}
+
+.app nav a {
+  margin: 0em 1em;
+}
+.app header {
+  border-bottom: 2px solid gray;
+  margin-bottom: 1em;
+}
