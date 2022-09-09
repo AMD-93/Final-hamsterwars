@@ -1,0 +1,47 @@
+.outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 1em 1em 1em 1em;
+  line-height: 13pt;
+}
+
+.hamsters {
+  width: 100%;
+  margin: 1em 0em 1em 0em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  text-justify: inter-word;
+  border-radius: 5px;
+}
+
+.form {
+  width: 25%;
+  height: 100%;
+  margin: 1.5em 0em 1em 1em;
+  padding: 2em 1em 2em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  text-justify: inter-word;
+  background-color: #fffefb;
+  border-radius: 5px;
+}
+
+.form p {
+  padding-top: 1em;
+}
+
+.form button {
+  background-color: #d1ffc6;
+  border: none;
+  border-radius: 5px;
+  padding: 1em 1em 1em 1em;
+  width: 100%;
+}

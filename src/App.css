@@ -1,0 +1,31 @@
+img {
+  width: 4em;
+  margin: 1em -2em 1em 3em;
+}
+
+h1 {
+  flex-grow: 1;
+  margin-left: 2em;
+}
+
+nav {
+  margin-right: 4em;
+}
+
+nav a {
+  color: #ac7088;
+  text-decoration: none;
+  padding-right: 1em;
+}
+
+nav a:hover {
+  color: #7e5264;
+}
+
+header {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ecccb2;
+}
