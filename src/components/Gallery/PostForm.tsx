@@ -3,8 +3,9 @@ import { useRecoilState } from "recoil";
 import allHamsters from "../../atoms/allHamsters";
 import { HamsterModel } from "../../models/HamsterModel";
 import { fixUrl } from "../../utils";
+import "./PostForm.css";
 
-const PostHamster = () => {
+const PostForm = () => {
   const [name, setName] = useState<string>("");
   const [age, setAge] = useState<string>("");
   const [favFood, setFavFood] = useState<string>("");
@@ -70,46 +71,42 @@ const PostHamster = () => {
   }
 
   return (
-    <div>
-      <section>
-        <form onSubmit={(e) => onClickPrevDefault(e, data)}>
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Age"
-            value={age}
-            onChange={(event) => setAge(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Food"
-            value={favFood}
-            onChange={(event) => setFavFood(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Loves"
-            value={loves}
-            onChange={(event) => setLoves(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Picture"
-            value={imgName}
-            onChange={(event) => setImgName(event.target.value)}
-          />
-          <button disabled={!formIsValid} onClick={handleAddHamster}>
-            Add a hamster
-          </button>
-        </form>
-      </section>
-    </div>
+    <form onSubmit={(e) => onClickPrevDefault(e, data)}>
+      <input
+        type="text"
+        placeholder="Namn"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Ålder"
+        value={age}
+        onChange={(event) => setAge(event.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Favoritmat"
+        value={favFood}
+        onChange={(event) => setFavFood(event.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Vad älskar den?"
+        value={loves}
+        onChange={(event) => setLoves(event.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Bild"
+        value={imgName}
+        onChange={(event) => setImgName(event.target.value)}
+      />
+      <button disabled={!formIsValid} onClick={handleAddHamster}>
+        Registrera ✔️
+      </button>
+    </form>
   );
 };
 
-export default PostHamster;
+export default PostForm;

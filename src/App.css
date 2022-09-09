@@ -1,15 +1,31 @@
-.app {
-  padding: 0em 2em;
+img {
+  width: 4em;
+  margin: 1em -2em 1em 3em;
 }
 
-.app img {
-  width: 10em;
+h1 {
+  flex-grow: 1;
+  margin-left: 2em;
 }
 
-.app nav a {
-  margin: 0em 1em;
+nav {
+  margin-right: 4em;
 }
-.app header {
-  border-bottom: 2px solid gray;
+
+nav a {
+  color: #ac7088;
+  text-decoration: none;
+  padding-right: 1em;
+}
+
+nav a:hover {
+  color: #7e5264;
+}
+
+header {
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ecccb2;
 }

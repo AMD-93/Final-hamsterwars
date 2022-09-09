@@ -1,13 +1,15 @@
+import { FIREBASE_CONFIG_VAR } from "firebase-admin/lib/app/lifecycle";
 import { useRecoilState } from "recoil";
-import allHams from "../../atoms/allHamsters";
+import allHamsters from "../../atoms/allHamsters";
 import { HamsterModel } from "../../models/HamsterModel";
 import { fixUrl, hamsterPics } from "../../utils";
+import "./GalleryCard.css";
 
 interface Props {
   hamster: HamsterModel;
 }
-const HamsterCard = ({ hamster }: Props) => {
-  const [, setData] = useRecoilState<HamsterModel[]>(allHams);
+const GalleryCard = ({ hamster }: Props) => {
+  const [, setData] = useRecoilState<HamsterModel[]>(allHamsters);
 
   const hamsterCard = async () => {
     const response: Response = await fetch(fixUrl(`/hamsters/${hamster.id}`), {
@@ -28,28 +30,27 @@ const HamsterCard = ({ hamster }: Props) => {
     }
   };
   return (
-    <div>
-      <div>
-        <img src={hamsterPics(hamster.imgName)} />
+    <>
+      <div className="div-wrapper">
+        <div className="pic-age">
+          <h3>
+            {hamster.name}, {hamster.age}
+          </h3>
+          <img src={hamsterPics(hamster.imgName)} />
+        </div>
+        <div className="info">
+          <p>
+            {hamster.name} älskar att {hamster.loves} och äter helst{" "}
+            {hamster.favFood}.
+          </p>
+          <p>Vinster: {hamster.wins}</p>
+          <p>Förluster: {hamster.defeats}</p>
+          <p>Matchar: {hamster.games}</p>
 
-        <h3>Name: {hamster.name}</h3>
-        <p>
-          {" "}
-          Age: {hamster.age}
-          <br />
-          Loves: {hamster.loves}
-          <br />
-          Favorite Food: {hamster.favFood} <br />
-          Wins: {hamster.wins}
-          <br />
-          Defeats: {hamster.defeats}
-          <br />
-          Matches: {hamster.games}
-        </p>
-
-        <button onClick={() => hamsterCard()}>Delete Hamster</button>
+          <button onClick={() => hamsterCard()}>Radera ❌ </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
-export default HamsterCard;
+export default GalleryCard;
