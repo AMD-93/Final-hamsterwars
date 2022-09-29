@@ -67,6 +67,7 @@ const PostForm = () => {
     e: FormEvent<HTMLFormElement>,
     data: HamsterModel[]
   ): void {
+    e.preventDefault();
     throw new Error("Function not implemented.");
   }
 
@@ -78,30 +79,56 @@ const PostForm = () => {
         value={name}
         onChange={(event) => setName(event.target.value)}
       />
+      {nameIsValid === true ? <p>✔️</p> : <p>Var god ange ett namn.</p>}
+
       <input
         type="number"
         placeholder="Ålder"
         value={age}
         onChange={(event) => setAge(event.target.value)}
       />
+      {ageIsValid === true ? (
+        <p>✔️</p>
+      ) : (
+        <p>Var god ange ett heltal mellan 1 och 5.</p>
+      )}
+
       <input
         type="text"
         placeholder="Favoritmat"
         value={favFood}
         onChange={(event) => setFavFood(event.target.value)}
       />
+      {favFoodIsValid === true ? (
+        <p>✔️</p>
+      ) : (
+        <p>Var god ange en mat i små bokstäver.</p>
+      )}
+
       <input
         type="text"
         placeholder="Vad älskar den?"
         value={loves}
         onChange={(event) => setLoves(event.target.value)}
       />
+      {lovesIsValid === true ? (
+        <p>✔️</p>
+      ) : (
+        <p>Var god ange en aktivitet i små bokstäver.</p>
+      )}
+
       <input
         type="text"
         placeholder="Bild"
         value={imgName}
         onChange={(event) => setImgName(event.target.value)}
       />
+      {imgNameIsValid === true ? (
+        <p>✔️</p>
+      ) : (
+        <p>Var god ladda upp en bild i JPG-, SVG- eller PNG-format.</p>
+      )}
+
       <button disabled={!formIsValid} onClick={handleAddHamster}>
         Registrera ✔️
       </button>
